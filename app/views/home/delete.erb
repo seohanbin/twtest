@@ -1,0 +1,10 @@
+password: 
+
+
+<form action="/home/destroy/<%=@target.id%>" method="post">
+    <input type="string" name="pass_forDEL">
+    <input type="submit" value="DELETE">
+</form>
+
+<h3><%= @error_print %></h3>
+<h4><a href='/'>back</a></h4>

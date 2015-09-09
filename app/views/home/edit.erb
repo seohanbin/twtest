@@ -1,0 +1,12 @@
+
+<form action="/home/editpush/<%=@edit_target.id%>" method="post">
+    content:
+    <input type="string" name="cont_toEDIT" value="<%=@edit_target.dcont%>">
+    password:
+    <input type="password" name="pass_forEDIT">
+    <input type="submit" value="EDIT">
+</form>
+
+
+<h3><%= @error_print %></h3>
+<h4><a href='/'>back</a></h4>

@@ -1,0 +1,35 @@
+<h1>tw</h1>
+
+
+
+    <% @allpost.each do |p| %>
+    <div class="row">
+        <%=p.dname %> :
+        <%=p.dcont %>
+        <a href="/home/edit/<%= p.id %>">[수정]</a>
+        <a href="/home/delete/<%= p.id %>">[삭제]</a><br>
+    </div>
+
+    <% p.twitreplies.each do |r| %>
+        <div class="row"> 
+        -----<%= r.repline %>
+        </div>
+    <% end %>
+
+    <form action="/home/reply">
+        --&#60;&#60;
+        <input type="hidden" name="target_post" value="<%= p.id %>">
+        <input type="string" name="userreply">
+        <input type="submit" value="REPLY">
+    </form>
+    <% end %>
+    <br>
+    ---------------------------------------------------------------------------------------------
+    <br>
+
+<form action="home/write" method="post">
+    name: <input type="string" name="username">
+    pass: <input type="password" name="userpass"><br>
+    cont: <input type="string" name="usercontent"><br>
+    <input type="submit" value="twit">
+</form>
